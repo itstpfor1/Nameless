@@ -179,3 +179,62 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Virtual environment ---
+venv/
+env/
+ENV/
+.venv/
+
+# --- Voice models (large binaries, never commit) ---
+main/voices/*.onnx
+main/voices/*.onnx.json
+main/voices/*.onnx.tar.gz
+
+# --- Whisper model cache (auto-downloaded, don't commit) ---
+*.pt
+*.bin
+**/whisper_cache/
+
+# --- Logs (grow constantly, personal/local data) ---
+logs/*.log
+logs/*.json
+!logs/.gitkeep
+
+# --- Local audio test artifacts ---
+test_output.wav
+*.wav
+!main/voices/samples/*.wav
+
+# --- Environment / secrets (future-proofing for API keys etc.) ---
+.env
+.env.local
+*.key
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- Jupyter (in case you ever prototype there) ---
+.ipynb_checkpoints/
+
+# --- Misc OS/editor cruft ---
+*.swp
+*~
